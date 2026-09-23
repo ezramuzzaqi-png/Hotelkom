@@ -1,0 +1,333 @@
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: #4A533C;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 3rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.Masuk {
+    text-decoration: none;
+    background-color: #4A533C;
+    padding: 12px 24px;
+    border: 3px solid #A3B18A;
+    border-radius: 16px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #E9EFE0 ;
+    font-weight: 600;
+    padding: 6px 0;
+    transition: all;
+    transition-duration: 300ms;
+}
+
+nav div img {
+    max-width: 50px;
+}
+
+main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    padding: 70px 5% 0;
+}
+
+.left,
+.right {
+    flex: 1;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.bg-color {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    /* background: #f5f5f5; */
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 100%;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 16px 0;
+    background: linear-gradient(90deg, #4A533C 7%, #A3B18A 90%);
+    background-clip: text;
+    color: transparent;
+}
+
+p {
+    font-size: 16px;
+    line-height: 160%;
+}
+
+.btn {
+    text-decoration: none;
+    background: #A3B18A ;
+    color: #2F3526 ;
+    padding: 12px 32px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 300ms ease;
+}
+
+/* .btn:hover {
+    box-shadow: ;
+ */
+
+.btn-outline {
+    text-decoration: none;
+    background-color: #fff;
+    color: #8B9A74  ;
+    padding: 12px 24px;
+    border: 2px solid #8B9A74   ;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.buttons {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+main .left {
+    max-width: 50% 
+}
+
+main .right {
+    position: relative;   /* jadi acuan posisi untuk overlay */
+    overflow: hidden;
+    width: 100%;
+    height: 400px;        /* atau sesuai kebutuhan, bisa 100vh dsb */
+}
+
+main .right img {
+    height: 600px;
+    object-fit: cover;
+}
+
+main .bg-color {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #748B6F;
+    right: 0;
+    top: 120px;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(150px);
+}
+
+main .right img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;            /* gambar di lapisan bawah */
+}
+
+main .right .bg-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;           /* seberapa tinggi area merahnya, atur sesuai selera */
+    background: linear-gradient(to top, #fff, rgba(255,0,0,0));
+    z-index: 2;            /* overlay di atas gambar */
+    pointer-events: none;  /* supaya tidak menghalangi klik ke gambar/link di baliknya */
+}
+
+.statistik {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 24px 40px;
+  background: #2F3526;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-angka {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #cfe8fb;
+  margin-top: 4px;
+}
+
+footer {
+  background: #2F3526;
+  color: #cfe8fb;
+  border-top: 4px solid #8B9A74 ;
+  padding: 40px 0 32px;
+  font-size: 14px;
+}
+
+footer .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-content {
+  flex: 1;
+}
+
+.footer-content h3 {
+  color: #F4F6F0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.footer-content p {
+  margin: 0 0 8px;
+  line-height: 1.6;
+  word-break: break-word; /* supaya email panjang tidak keluar kotak */
+}
+
+.footer-content .list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content .list li {
+  margin-bottom: 8px;
+}
+
+.footer-content .list a {
+  color: #cfe8fb;
+  text-decoration: none;
+  transition: color 0.2s, padding-left 0.2s;
+}
+
+.footer-content .list a:hover {
+  color: #000;
+  padding-left: 6px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    height: 480px;
+    padding: 30px;
+}
+
+.login-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.login-header header {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.input-box .input-field {
+    width: 100%;
+    box-sizing: border-box; /* FIX: tanpa ini, lebar 100% + padding membuat input lebih lebar dari tombol */
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05); /* FIX: sebelumnya "0,05" (koma), jadi shadow tidak terbaca */
+    outline: none;
+    transition: 0.3s; /* FIX: sebelumnya "3ms", terlalu cepat sehingga animasi tidak terlihat */
+}
+
+::placeholder {
+    font-weight: 500;
+    color: #888;
+}
+
+.input-field:focus {
+    width: 105%;
+}
+
+.input-submit {
+    position: relative;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #A3B18A;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit label {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #4A533C;
+    transform: scale(1.05, 1);
+}
