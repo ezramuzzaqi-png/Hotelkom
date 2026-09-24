@@ -6,6 +6,7 @@ nav {
     background-color: #4A533C;
     display: flex;
     justify-content: space-between;
+    align-items: center;          /* logo & menu sejajar vertikal */
     padding: 0.5rem 3rem;
 }
 
@@ -14,6 +15,20 @@ nav ul {
     align-items: center;
     gap: 2rem;
     list-style: none;
+    margin: 0;                    /* reset margin bawaan */
+    padding: 0;                   /* reset padding bawaan */
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    display: block;               /* hilangkan celah kecil di bawah gambar */
+    height: 50px;
+    width: auto;                  /* proporsi tetap terjaga */
+    object-fit: contain;
 }
 
 .Masuk {
@@ -34,10 +49,6 @@ nav ul li a {
     padding: 6px 0;
     transition: all;
     transition-duration: 300ms;
-}
-
-nav div img {
-    max-width: 50px;
 }
 
 main {
@@ -187,6 +198,81 @@ main .right .bg-img {
   font-size: 14px;
   color: #cfe8fb;
   margin-top: 4px;
+}
+
+.section-tittle {
+    text-align: center;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: larger;
+}
+
+.section-tittle::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 100px;
+    background-color: #4A533C;
+}
+
+.about-section {
+    padding: 120px 0;
+    background: #fbf5f5; /* off-white seperti contoh, atau tetap #fff */
+}
+
+.about-section .section-content {
+    max-width: 1100px;      /* batasi lebar */
+    margin: 0 auto;         /* pusatkan */
+    padding: 0 40px;        /* jarak dari tepi layar */
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-section .about-details .section-tittle {
+    padding: 0;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.about-section .about-img-wrapper {
+    flex-shrink: 0;         /* gambar tidak ikut mengecil */
+}
+
+.about-section .about-img-wrapper .about-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 50%;     /* ini yang membuat bulat */
+    display: block;
+}
+
+.about-section .about-details {
+    flex: 1;
+    max-width: 560px;
+    text-align: center;
+}
+
+.about-section .about-details .text {
+    line-height: 1.8;
+    margin: 40px 0 30px;
+    font-size: 16px;        /* "larger" terlalu besar dibanding contoh */
+}
+
+.social-link-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.social-link-list a {
+    color: #2F3526;
+    text-decoration: none;
 }
 
 footer {

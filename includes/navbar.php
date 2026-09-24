@@ -8,13 +8,16 @@
                     <a href="index.php">Home</a>
                 </li>
                 <li>
-                    <a href="form.html">Pinjam buku</a>
+                    <a href="form.html">Hotel</a>
                 </li>
                 <li>
-                    <a href="#">Daftar buku</a>
+                    <a href="#">Rooms</a>
                 </li>
                 <li>
-                    <a href="#">About us</a>
+                    <a href="#">History</a>
+                </li>
+                <li>
+                    <a href="#">Contact us</a>
                 </li>
                 <li class="Masuk">
                     <a href="register.php">Register</a>
