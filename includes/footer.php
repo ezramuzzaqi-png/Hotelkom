@@ -10,11 +10,12 @@
             <h3>Quick Link</h3>
             <ul class="list">
                 <li><a href="home.html">Home</a></li>
-                <li><a href="form.html">Pinjam Buku</a></li>
-                <li><a href="daftarbuku.html">Daftar Buku</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
+                <li><a href="form.html">Hotel</a></li>
+                <li><a href="daftarbuku.html">Rooms</a></li>
+                <li><a href="aboutUs.html">History</a></li>
             </ul>
         </div>
     </div>
   <p class="copyright">© 2026 HotelKom</p>
 </footer>
+<script src="assets/js/custom-select.js"></script>

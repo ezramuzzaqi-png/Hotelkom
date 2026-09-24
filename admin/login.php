@@ -7,10 +7,6 @@ require_once '../config/koneksi.php';
 
 $error = '';
 
-// ADMIN
-$password_hash = password_hash('adminhotel', PASSWORD_DEFAULT);
-echo $password_hash;
-
 // Kalau admin sudah login, langsung arahkan ke dashboard
 if (isset($_SESSION['id_user']) && isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     header('Location: dashboard.php');

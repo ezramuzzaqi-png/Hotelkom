@@ -12,7 +12,7 @@ include 'includes/navbar.php';
 <main>
     <div class="left">
         <h1>Selamat Datang di HotelKom!</h1>
-        <p class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum perspiciatis aspernatur alias?</p>
+        <p class="sub-heading">Nikmati fasilitas modern, layanan ramah 24 jam, dan suasana menginap yang menenangkan. Jelajahi pilihan kamar terbaik kami dan mulailah momen liburan impian Anda bersama kami.</p>
         <div class="buttons">
             <a href="form.html" class="btn">Cari hotel</a>
             <a href="" class="btn-outline">Booking kamar</a>
@@ -55,6 +55,39 @@ include 'includes/navbar.php';
         </div>
       </div>
   </div>
+  <div class="container-card">
+         <div class="card__container">
+            <article class="card__article">
+               <img src="assets/images/superior.jpe" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Kamar tingkat menengah yang sedikit lebih luas dan lebih lengkap fasilitasnya daripada kamar standar. Pilihan hemat untuk kenyamanan ekstra.</span>
+                  <h2 class="card__title">Superior room</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="assets/images/deluxe.jpeg" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Kamar yang lebih luas, elegan, dan premium dibanding Superior. Biasanya dilengkapi sofa santai dan menawarkan pemandangan (view) yang lebih bagus.</span>
+                  <h2 class="card__title">Deluxe room</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+
+            <article class="card__article">
+               <img src="assets/images/suite.jpe" alt="image" class="card__img">
+
+               <div class="card__data">
+                  <span class="card__description">Kamar kelas mewah dengan ukuran sangat luas yang memiliki ruang tamu terpisah dari tempat tidur. Dilengkapi fasilitas eksklusif seperti bathtub, dapur kecil, atau meja makan.</span>
+                  <h2 class="card__title">Suite room</h2>
+                  <a href="#" class="card__button">Read More</a>
+               </div>
+            </article>
+         </div>
+      </div>
 </section>
 <?php
 include 'includes/footer.php';
