@@ -58,14 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php
 include 'includes/navbar.php';
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Akun - Hotel Booking</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         /* Kecil saja, khusus pesan error/sukses — tidak ada di style.css utama */
         .msg-box {
