@@ -9,4 +9,4 @@ RUN install-php-extensions \
 COPY . /app
 WORKDIR /app
 
-EXPOSE 80
+CMD sh -c "frankenphp php-server --listen :${PORT:-80} --root /app"
