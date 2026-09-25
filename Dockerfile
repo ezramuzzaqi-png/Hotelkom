@@ -7,6 +7,7 @@ RUN install-php-extensions \
     gd
 
 COPY . /app
-WORKDIR /app
 
-CMD sh -c "frankenphp php-server --listen :${PORT:-80} --root /app"
+COPY Caddyfile /etc/frankenphp/Caddyfile
+
+WORKDIR /app
