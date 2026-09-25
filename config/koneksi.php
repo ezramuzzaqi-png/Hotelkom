@@ -1,10 +1,5 @@
 <!-- MENGHUBUNGKAN PHP DENGAN DATABASE -->
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "hotel";
-
 $koneksi = mysqli_connect(getenv('MYSQLHOST'), getenv('MYSQLUSER'), getenv('MYSQLPASSWORD'), getenv('MYSQLDATABASE'), getenv('MYSQLPORT'));
 
 if (!$koneksi) {
