@@ -1,11 +1,12 @@
 <?php
 // admin/login.php
-// Halaman login khusus admin
+// Halaman login khusus admin (disamakan dengan login.php public)
 
 session_start();
 require_once '../config/koneksi.php';
 
 $error = '';
+$emailValue = '';
 
 // Kalau admin sudah login, langsung arahkan ke dashboard
 if (isset($_SESSION['id_user']) && isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
@@ -14,8 +15,9 @@ if (isset($_SESSION['id_user']) && isset($_SESSION['role']) && $_SESSION['role']
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email    = trim($_POST['email']);
-    $password = $_POST['password'];
+    $email    = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $emailValue = $email;
 
     if (empty($email) || empty($password)) {
         $error = 'Email dan password wajib diisi.';
@@ -32,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($user['role'] === 'admin') {
                 $_SESSION['id_user'] = $user['id_user'];
                 $_SESSION['nama']    = $user['nama'];
+                $_SESSION['email']   = $user['email'];
                 $_SESSION['role']    = $user['role'];
 
                 header('Location: dashboard.php');
@@ -53,52 +56,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin - Hotel Booking</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 
-<div class="admin-login-wrapper">
-    <div class="admin-login-box">
-        <h2>Login Admin</h2>
-        <p class="subtitle">Khusus untuk pengelola website Hotel Booking</p>
+<main class="login-main">
+    <div class="login-box">
+        <div class="login-header">
+            <header>Login Admin</header>
+            <p class="login-sub">Khusus untuk pengelola website Hotel Booking</p>
+        </div>
 
         <?php if (!empty($error)): ?>
-            <div class="alert alert-error">
-                <?php echo htmlspecialchars($error); ?>
-            </div>
+            <div class="msg-box msg-error"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
 
-        <form action="login.php" method="POST">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="admin@hotelbooking.com"
-                    required
-                >
+        <form action="login.php" method="POST" autocomplete="on">
+            <div class="input-box">
+                <input type="email" class="input-field" name="email" placeholder="admin@hotelbooking.com"
+                       required autocomplete="email"
+                       value="<?php echo htmlspecialchars($emailValue); ?>">
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Masukkan password"
-                    required
-                >
+            <div class="input-box">
+                <input type="password" class="input-field" name="password" placeholder="Masukkan password"
+                       required autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn-login">Masuk</button>
+            <div class="input-submit">
+                <button type="submit" id="loginSubmit" class="submit-btn" aria-label="Masuk"></button>
+                <label for="loginSubmit">Masuk</label>
+            </div>
         </form>
 
-        <div class="back-link">
-            <a href="../index.php">&larr; Kembali ke Website</a>
-        </div>
+        <p class="login-footer-link"><a href="../index.php">&larr; Kembali ke Website</a></p>
     </div>
-</div>
+</main>
 
 </body>
 </html>

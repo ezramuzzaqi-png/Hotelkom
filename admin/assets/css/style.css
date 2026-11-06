@@ -515,6 +515,79 @@ td.empty {
     border-color: #c5e8d3;
 }
 
+.login-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 440px;
+    height: 480px;
+    padding: 30px;
+}
+
+.login-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+}
+
+.login-header header {
+    color: #333;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.input-box .input-field {
+    width: 100%;
+    box-sizing: border-box; /* FIX: tanpa ini, lebar 100% + padding membuat input lebih lebar dari tombol */
+    height: 60px;
+    font-size: 17px;
+    padding: 0 25px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05); /* FIX: sebelumnya "0,05" (koma), jadi shadow tidak terbaca */
+    outline: none;
+    transition: 0.3s; /* FIX: sebelumnya "3ms", terlalu cepat sehingga animasi tidak terlihat */
+}
+
+::placeholder {
+    font-weight: 500;
+    color: #888;
+}
+
+.input-field:focus {
+    width: 105%;
+}
+
+.input-submit {
+    position: relative;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 60px;
+    background: #A3B18A;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.input-submit label {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #4A533C;
+    transform: scale(1.05, 1);
+}
+
 /* Versi mobile (masih dikomentari, belum disesuaikan dengan logout di bawah)
 @media(max-width: 800px) {
     body{

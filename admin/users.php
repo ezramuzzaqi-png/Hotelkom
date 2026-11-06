@@ -46,7 +46,7 @@ function e($s){ return htmlspecialchars((string)$s, ENT_QUOTES,'UTF-8'); }
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Users | Kolika</title>
+    <title>Data Users | Admin</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

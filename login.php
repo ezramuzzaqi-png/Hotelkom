@@ -6,6 +6,7 @@ session_start();
 require_once 'config/koneksi.php';
 
 $error = '';
+$emailValue = '';
 
 // Kalau sudah login, jangan biarkan buka halaman login lagi
 if (isset($_SESSION['id_user'])) {
@@ -18,8 +19,9 @@ if (isset($_SESSION['id_user'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email    = trim($_POST['email']);
-    $password = $_POST['password'];
+    $email    = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    $emailValue = $email;
 
     if (empty($email) || empty($password)) {
         $error = 'Email dan password wajib diisi.';
@@ -55,51 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include 'includes/header.php';
 include 'includes/navbar.php';
 ?>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Hotel Booking</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Kecil saja, khusus pesan error/sukses — tidak ada di style.css utama */
-        .msg-box {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 12px 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            text-align: center;
-        }
-        .msg-error {
-            background: #F5D6D6;
-            color: #7A2E2E;
-        }
-        .msg-success {
-            background: #DDEAD1;
-            color: #38542A;
-        }
-        .login-footer-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
-        .login-footer-link a {
-            color: #4A533C;
-            font-weight: 600;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
+<link rel="stylesheet" href="assets/css/login.css">
 
-<main>
+<main class="login-main">
     <div class="login-box">
         <div class="login-header">
             <header>Login</header>
+            <p class="login-sub">Masuk untuk booking hotel favoritmu</p>
         </div>
 
         <?php if (!empty($error)): ?>
@@ -110,18 +74,21 @@ include 'includes/navbar.php';
             <div class="msg-box msg-success">Registrasi berhasil! Silakan login.</div>
         <?php endif; ?>
 
-        <form action="login.php" method="POST">
+        <form action="login.php" method="POST" autocomplete="on">
             <div class="input-box">
-                <input type="email" class="input-field" name="email" placeholder="Email" required>
+                <input type="email" class="input-field" name="email" placeholder="Email"
+                       required autocomplete="email"
+                       value="<?php echo htmlspecialchars($emailValue); ?>">
             </div>
 
             <div class="input-box">
-                <input type="password" class="input-field" name="password" placeholder="Password" required>
+                <input type="password" class="input-field" name="password" placeholder="Password"
+                       required autocomplete="current-password">
             </div>
 
             <div class="input-submit">
-                <button type="submit" class="submit-btn"></button>
-                <label>Masuk</label>
+                <button type="submit" id="loginSubmit" class="submit-btn" aria-label="Masuk"></button>
+                <label for="loginSubmit">Masuk</label>
             </div>
         </form>
 
@@ -129,8 +96,6 @@ include 'includes/navbar.php';
     </div>
 </main>
 
-</body>
-</html>
 <?php
-include 'includes/footer.php'
+include 'includes/footer.php';
 ?>

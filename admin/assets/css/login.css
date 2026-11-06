@@ -1,0 +1,211 @@
+/* login.css Admin - disamakan dengan assets/css/login.css (public)
+   Palette: #4A533C (sage tua), #A3B18A (sage), #2F3526
+   Tambahan: base body karena halaman admin/login.php standalone
+   (tidak memuat style.css, hanya file ini) */
+
+/* Base standalone (public mengandalkan style.css via header.php) */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: #2F3526;
+    min-height: 100vh;
+}
+
+/* Wrapper khusus login */
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 48px 20px;
+    background: #f5f5f5;
+    box-sizing: border-box;
+}
+
+/* Kartu login */
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 440px;
+    max-width: 100%;
+    min-height: 480px;
+    padding: 36px 32px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(74, 83, 60, 0.12);
+    border: 1px solid #eef1eb;
+    box-sizing: border-box;
+}
+
+.login-header {
+    text-align: center;
+    margin: 0 0 28px 0;
+}
+
+.login-header header {
+    color: #4A533C;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.2;
+}
+
+.login-header .login-sub,
+.login-header .subtitle {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #7a8a6e;
+}
+
+/* Pesan error / sukses (msg-box = public, alert = kompatibilitas markup lama admin) */
+.msg-box,
+.alert {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.msg-error,
+.alert-error,
+.alert.alert-error {
+    background: #F5D6D6;
+    color: #7A2E2E;
+    border-color: #efb9b9;
+}
+
+.msg-success {
+    background: #DDEAD1;
+    color: #38542A;
+    border-color: #bcd8a8;
+}
+
+/* Form */
+.login-box form {
+    width: 100%;
+}
+
+.input-box {
+    margin-bottom: 15px;
+}
+
+.input-box .input-field {
+    width: 100%;
+    box-sizing: border-box;
+    height: 56px;
+    font-size: 16px;
+    padding: 0 25px;
+    border-radius: 30px;
+    border: 1px solid #d9e2d0;
+    background: #fff;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.05);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    color: #2F3526;
+    font-family: inherit;
+}
+
+.input-box .input-field::placeholder {
+    font-weight: 500;
+    color: #888;
+}
+
+.input-box .input-field:focus {
+    border-color: #A3B18A;
+    box-shadow: 0 0 0 3px rgba(163, 177, 138, 0.25);
+}
+
+/* Tombol submit (pola button + label overlay seperti public) */
+.input-submit {
+    position: relative;
+    margin-top: 8px;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 56px;
+    background: #A3B18A;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.2s ease;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.submit-btn:hover {
+    background: #4A533C;
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* Label overlay di atas tombol */
+.input-submit label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Link footer (login-footer-link = public, back-link = markup lama admin) */
+.login-footer-link,
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-footer-link a,
+.back-link a {
+    color: #4A533C;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer-link a:hover,
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-main {
+        padding: 28px 14px;
+    }
+
+    .login-box {
+        padding: 28px 20px;
+        min-height: auto;
+    }
+
+    .login-header header {
+        font-size: 26px;
+    }
+
+    .input-box .input-field,
+    .submit-btn {
+        height: 52px;
+        font-size: 15px;
+    }
+}

@@ -14,8 +14,8 @@ include 'includes/navbar.php';
         <h1>Selamat Datang di HotelKom!</h1>
         <p class="sub-heading">Nikmati fasilitas modern, layanan ramah 24 jam, dan suasana menginap yang menenangkan. Jelajahi pilihan kamar terbaik kami dan mulailah momen liburan impian Anda bersama kami.</p>
         <div class="buttons">
-            <a href="form.html" class="btn">Cari hotel</a>
-            <a href="" class="btn-outline">Booking kamar</a>
+            <a href="hotels.php" class="btn">Cari hotel</a>
+            <a href="hotels.php" class="btn-outline">Booking kamar</a>
                 <div class="bg-color">
                 <img src="" alt="">
             </div>

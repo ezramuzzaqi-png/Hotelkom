@@ -15,7 +15,7 @@ $stats = [
     ['label' => 'Hotels',           'value' => number_format($h['total'], 0, ',', '.'),
      'sub'   => (int)$h['kota'] . ' kota',                'icon' => 'hotel'],
     ['label' => 'Kamar',            'value' => number_format($r['stok'], 0, ',', '.'),
-     'sub'   => 'DI tempati',                              'icon' => 'bed'],
+     'sub'   => 'Tersedia',                              'icon' => 'bed'],
     ['label' => 'Booking Pending',  'value' => number_format((int)$b['pending'], 0, ',', '.'),
      'sub'   => (int)$b['confirmed'] . ' dikonfirmasi',    'icon' => 'clock'],
     ['label' => 'Pendapatan',       'value' => rupiah($p['total']),
@@ -56,7 +56,7 @@ $warna_avatar = ['#0e8fd6', '#063d73', '#e0a800', '#2a9d8f', '#7b61ff', '#e76f51
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Kolika</title>
+  <title>Dashboard - Admin</title>
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Tambahan untuk tampilan dashboard (boleh dipindah ke style.css) -->
